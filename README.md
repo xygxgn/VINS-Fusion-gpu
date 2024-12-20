@@ -28,6 +28,14 @@
 - **Notes**
   - ***The version of the OpenCV must be consistent with the version of OpenCV used by cv-bridge***
 
+### Run
+- **download the source package**
+  - `cd ~/catkin_ws`
+  - `source devel/setup.bash`
+  - `roslaunch vins euroc.launch`
+- **play rosbag**
+  - `rosbag play MH_01_easy.bag`
+
 If you find this work useful or interesting, please kindly give us a star :star:, thanks!
 
 
