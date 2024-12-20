@@ -15,8 +15,9 @@ find_package(catkin REQUIRED COMPONENTS
     roslib
     )
 
-#find_package(OpenCV)
-include(/home/dji/opencv/build/OpenCVConfig.cmake)
+set(OpenCV_DIR "/usr/local/lib/cmake/opencv4")
+find_package(OpenCV)
+# include(/home/dji/opencv/build/OpenCVConfig.cmake)
 
 
 find_package(Ceres REQUIRED)

@@ -1,3 +1,36 @@
+## ROS Noetic version of VINS-Fusion-gpu.
+
+### Prerequisites
+- **System**
+  - Ubuntu 20.04
+  - ROS Noetic
+- **Libraries**
+  - [OpenCV 4.6.0 with CUDA](https://blog.csdn.net/qq_44998513/article/details/133778446) (installed by yourself)
+  - [Ceres Solver-1.14.0](http://ceres-solver.org/installation.html)
+
+### Build
+- **download the source package**
+  - `mkdir ~/catkin_ws/src && cd ~/catkin_ws/src`
+  - `git clone https://github.com/xygxgn/VINS-Fusion-gpu.git`
+  - `cd VINS-Fusion-gpu`
+- **build with OpenCV installed by yourself *(install in `/usr/local`)***
+  - `gedit camera_models/CMakeLists.txt`
+  - Modify `set(OpenCV_DIR "/usr/local/lib/cmake/opencv4")`
+  - `gedit loop_fusion/CMakeLists.txt`
+  - Modify `set(OpenCV_DIR "/usr/local/lib/cmake/opencv4")`
+  - `gedit vins_estimator/CMakeLists.txt`
+  - Modify `set(OpenCV_DIR "/usr/local/lib/cmake/opencv4")`
+  - *do NOT forget source your own cv_bridge workspace*
+  - `source ~/cv_bridge/devel/setup.bash`
+  - `cd ~/catkin_ws/src`
+  - `catkin_make`
+
+- **Notes**
+  - ***The version of the OpenCV must be consistent with the version of OpenCV used by cv-bridge***
+
+If you find this work useful or interesting, please kindly give us a star :star:, thanks!
+
+
 # VINS-Fusion-gpu
 This repository is a version of VINS-Fusion with GPU acceleration. It can run on Nvidia TX2 in real-time. 
 ## 1. Prerequisites  
