@@ -1,0 +1,6 @@
+<launch>
+	<node name="vins_estimator" pkg="vins"  type="vins_node" output="screen" args="$(find vins)/../config/drone/drone.yaml"/>
+
+	<node name="loop_fusion" pkg="loop_fusion"  type="loop_fusion_node" args="$(find vins)/../config/drone/drone.yaml" output="screen"/>
+	<!-- <node name="rvizvisualisation" pkg="rviz" type="rviz" output="log" args="-d $(find vins)/launch/vins_rviz.rviz" /> -->
+</launch> 
